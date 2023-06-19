@@ -38,7 +38,7 @@ before_script:
 codequality:
   script:
     - pip install mypy mypy-gitlab-code-quality
-    - mypy program.py --no-error-summary > mypy-out.txt
+    - mypy . --no-error-summary > mypy-out.txt
     - PYTHONHASHSEED=0 mypy-gitlab-code-quality < mypy-out.txt > codequality.json
   artifacts:
     when: always
